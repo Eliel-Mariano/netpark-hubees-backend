@@ -5,14 +5,36 @@ export class ListBikesDatabase extends BaseDatabase {
 
   listBikes = async (): Promise<bike[]> => {
     try {
-      const bike = await this.connection.raw(`
+      const bikes = await this.connection.raw(`
         SELECT * FROM bikes
         `);
-console.log(bike[0]);
-
-        return bike[0]
+        return bikes[0]
     } catch (error: any) {
       throw new Error(error.message);
     }
-  };
+  }
+
+  listBikesByColor = async (color:string): Promise<bike[]> => {
+    try {
+      const bikes = await this.connection.raw(`
+        SELECT * FROM bikes
+        WHERE color = "${color}"
+        `);
+        return bikes[0]
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }
+
+  listBikesByPrice = async (minorPrice:string, majorPrice:string): Promise<bike[]> => {
+    try {
+      const bikes = await this.connection.raw(`
+        SELECT * FROM bikes
+        WHERE price BETWEEN ${minorPrice} AND ${majorPrice}
+        `);
+        return bikes[0]
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }
 }

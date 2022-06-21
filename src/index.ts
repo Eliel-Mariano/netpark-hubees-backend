@@ -8,6 +8,8 @@ const deleteBikeByIdBikeBusiness = new DeleteBikeByIdContoller
 const listBikesContoller = new ListBikesContoller
 
 app.get("/bikes", listBikesContoller.listBikes)
+app.get("/bikes/:color", listBikesContoller.listBikesByColor)
+app.get("/bikes/:minorPrice/:majorPrice", listBikesContoller.listBikesByPrice)
 
 app.post("/register", registerBikeContoller.registerBike)
 

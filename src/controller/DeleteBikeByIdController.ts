@@ -8,7 +8,7 @@ export class DeleteBikeByIdContoller{
     deleteBike = async (req:Request, res:Response):Promise<void>=>{
 
         try {
-            const id:string = req.params.id;
+            const id:string = req.params.id
             
             await deleteBikeByIdBikeBusiness.deleteBike(id)
 
