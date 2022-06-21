@@ -1,16 +1,20 @@
 import { Request, Response } from "express";
 import { DeleteBikeByIdBusiness } from "../business/DeleteBikeByIdBusiness";
 
-const deleteBikeByIdBikeBusiness = new DeleteBikeByIdBusiness
+//const deleteBikeByIdBikeBusiness = new DeleteBikeByIdBusiness
 
 export class DeleteBikeByIdContoller{
+
+    constructor(
+        private deleteBikeByIdBikeBusiness:DeleteBikeByIdBusiness
+      ){}
 
     deleteBike = async (req:Request, res:Response):Promise<void>=>{
 
         try {
             const id:string = req.params.id
             
-            await deleteBikeByIdBikeBusiness.deleteBike(id)
+            await this.deleteBikeByIdBikeBusiness.deleteBike(id)
 
             res.status(201).send({
                 message:"Bike vendida com sucesso!"
