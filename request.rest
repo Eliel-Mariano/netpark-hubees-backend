@@ -26,3 +26,10 @@ GET http://localhost:3003/bikes
 Content-Type: application/json
 ###
 
+GET http://localhost:3003/bikes/amarela
+Content-Type: application/json
+###
+
+GET http://localhost:3003/bikes/1000/2000
+Content-Type: application/json
+###
