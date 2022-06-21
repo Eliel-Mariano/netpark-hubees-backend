@@ -3,9 +3,13 @@ import { Idgenerator } from "../services/IdGenerator";
 import { bike } from "../types/bikeType";
 import { registerBikeInputDTO } from "../types/registerBikeInputDTO";
 
-const registerBikeDatabase = new RegisterBikeDatabase();
 
 export class RegisterBikeBusiness {
+
+  constructor(
+    private registerBikeDatabase:RegisterBikeDatabase,
+    private idGenerator:Idgenerator
+  ){}
     
   registerBike = async (input: registerBikeInputDTO): Promise<void> => {
     try {
@@ -15,12 +19,11 @@ export class RegisterBikeBusiness {
         throw new Error("Informe color, numberOfGears, mark, model e price.");
       }
 
-      const idGenerator = new Idgenerator();
-      const id = idGenerator.generateId();
+      const id = this.idGenerator.generateId();
 
       const bike: bike = { id, color, numberOfGears, mark, model, price };
 
-      await registerBikeDatabase.registerBike(bike);
+      await this.registerBikeDatabase.registerBike(bike);
 
     } catch (error: any) {
       throw new Error(error.message);
@@ -34,7 +37,7 @@ export class RegisterBikeBusiness {
         throw new Error("Informe o novo valor de price.");
       }
 
-      await registerBikeDatabase.newPrice(price, id);
+      await this.registerBikeDatabase.newPrice(price, id);
 
     } catch (error: any) {
       throw new Error(error.message);
