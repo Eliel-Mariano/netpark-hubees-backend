@@ -1,0 +1,28 @@
+POST http://localhost:3003/register
+Content-Type: application/json
+
+{ 
+    "color": "amarela",
+    "numberOfGears": 18,
+    "mark": "Caloi",
+    "model": "Trilha",
+    "price": 3000
+}
+###
+
+DELETE  http://localhost:3003/delete/3b87dc6a-0945-45c2-af7c-daa84c538f73
+Content-Type: application/json
+###
+
+PUT http://localhost:3003/register/newprice/3b87dc6a-0945-45c2-af7c-daa84c538f73
+Content-Type: application/json
+
+{
+    "price":100
+}
+###
+
+GET http://localhost:3003/bikes
+Content-Type: application/json
+###
+
