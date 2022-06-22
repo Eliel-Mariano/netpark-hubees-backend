@@ -5,4 +5,5 @@ export type registerBikeInputDTO = {
   mark: string;
   model: string;
   price: number;
-}
+};
+
