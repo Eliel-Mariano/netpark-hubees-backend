@@ -1,7 +1,7 @@
 import { RegisterBikeDatabase } from "../data/RegisterBikeDatabase";
 import { Idgenerator } from "../services/IdGenerator";
 import { bike } from "../types/bikeType";
-import { registerBikeInputDTO } from "../types/registerBikeInputDTO";
+import { registerBikeInputDTO } from "../model/registerBikeInputDTO";
 
 
 export class RegisterBikeBusiness {

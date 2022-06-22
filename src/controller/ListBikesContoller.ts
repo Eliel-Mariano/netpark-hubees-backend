@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { ListBikesBusiness } from "../business/ListBikesBusiness";
 
-//const listBikesBusiness = new ListBikesBusiness
 
 export class ListBikesContoller{
 
