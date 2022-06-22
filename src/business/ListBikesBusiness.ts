@@ -1,7 +1,6 @@
 import { ListBikesDatabase } from "../data/ListBikesDatabase";
 import { bike } from "../types/bikeType";
 
-//const listBikesDatabase = new ListBikesDatabase();
 
 export class ListBikesBusiness {
 

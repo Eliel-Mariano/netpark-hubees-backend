@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { RegisterBikeBusiness } from "../business/RegisterBikeBusiness";
-import { registerBikeInputDTO } from "../types/registerBikeInputDTO";
+import { registerBikeInputDTO } from "../model/registerBikeInputDTO";
 
 
 export class RegisterBikeContoller{

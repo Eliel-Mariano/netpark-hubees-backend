@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { DeleteBikeByIdBusiness } from "../business/DeleteBikeByIdBusiness";
 
-//const deleteBikeByIdBikeBusiness = new DeleteBikeByIdBusiness
 
 export class DeleteBikeByIdContoller{
 

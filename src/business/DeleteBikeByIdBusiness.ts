@@ -1,6 +1,5 @@
 import { DeleteBikeByIdDatabase } from "../data/DeleteBikeByIdDatabase";
 
-//const deleteBikeByIdDatabase = new DeleteBikeByIdDatabase();
 
 export class DeleteBikeByIdBusiness {
 
