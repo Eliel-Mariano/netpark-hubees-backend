@@ -19,6 +19,14 @@ export class RegisterBikeBusiness {
         throw new Error("Informe color, numberOfGears, mark, model e price.");
       }
 
+      if (typeof color !== "string" || typeof mark !== "string" || typeof model !== "string") {
+        throw new Error("color, mark e model devem ser do tipo string");
+      }
+
+      if (typeof price !== "number" || typeof numberOfGears !== "number") {
+        throw new Error("price e numberOfGears devem ser do tipo number");
+      }
+
       const id = this.idGenerator.generateId();
 
       const bike: bike = { id, color, numberOfGears, mark, model, price };
@@ -35,6 +43,11 @@ export class RegisterBikeBusiness {
       
       if (!price) {
         throw new Error("Informe o novo valor de price.");
+      }
+
+      const registeredBike = await this.registerBikeDatabase.findById(id);
+      if (registeredBike.length === 0) {
+        throw new Error("Bike não cadastrada.");
       }
 
       await this.registerBikeDatabase.newPrice(price, id);

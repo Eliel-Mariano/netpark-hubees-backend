@@ -10,7 +10,7 @@ export class ListBikesDatabase extends BaseDatabase {
         `);
         return bikes[0]
     } catch (error: any) {
-      throw new Error(error.message);
+      throw new Error(error.message || error.sqlMessage);
     }
   }
 
@@ -22,7 +22,7 @@ export class ListBikesDatabase extends BaseDatabase {
         `);
         return bikes[0]
     } catch (error: any) {
-      throw new Error(error.message);
+      throw new Error(error.message || error.sqlMessage);
     }
   }
 
@@ -34,7 +34,7 @@ export class ListBikesDatabase extends BaseDatabase {
         `);
         return bikes[0]
     } catch (error: any) {
-      throw new Error(error.message);
+      throw new Error(error.message || error.sqlMessage);
     }
   }
 }

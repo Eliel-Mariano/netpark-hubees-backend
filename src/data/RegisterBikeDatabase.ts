@@ -16,11 +16,11 @@ export class RegisterBikeDatabase extends BaseDatabase {
             )
         `);
     } catch (error: any) {
-      throw new Error(error.message);
+      throw new Error(error.message || error.sqlMessage);
     }
   };
 
-  newPrice = async (price:number, id:string) => {
+  newPrice = async (price: number, id: string) => {
     try {
       await this.connection.raw(`
           UPDATE bikes
@@ -28,7 +28,19 @@ export class RegisterBikeDatabase extends BaseDatabase {
           WHERE id = "${id}"
         `);
     } catch (error: any) {
-      throw new Error(error.message);
+      throw new Error(error.message || error.sqlMessage);
+    }
+  };
+
+  findById = async (id: string): Promise<any> => {
+    try {
+      const bike = await this.connection.raw(`
+        SELECT * FROM bikes
+        WHERE id = "${id}";
+    `);
+      return bike[0];
+    } catch (error: any) {
+      throw new Error(error.message || error.sqlMessage);
     }
   };
 }
