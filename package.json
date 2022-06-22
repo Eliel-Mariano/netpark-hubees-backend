@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev ./src/index.ts",
-    "start": "tsc && node ./build/index.js",
+    "start": "node ./build/src/index.js",
     "migrations": "tsnd ./src/data/migration.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "postinstall": "tsc"
+  },
+  "engines": {
+    "node": "v16.14.2"
   },
   "keywords": [],
   "author": "",
