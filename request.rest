@@ -2,23 +2,23 @@ POST http://localhost:3003/register
 Content-Type: application/json
 
 { 
-    "color": "Branca",
+    "color": "laranja",
     "numberOfGears": 18,
     "mark": "Caloi",
     "model": "Trilha",
-    "price": 2500
+    "price": 2100
 }
 ###
 
-DELETE  http://localhost:3003/delete/f125b3e9-b18b-4e9a-8f22-a43e955f3205
+DELETE  http://localhost:3003/delete/fe7da168-903d-423b-be95-49786bff86e5
 Content-Type: application/json
 ###
 
-PUT http://localhost:3003/register/newprice/3b87dc6a-0945-45c2-af7c-daa84c538f73
+PUT http://localhost:3003/register/newprice/06598950-be9c-47a6-ae0f-f791bad888c3
 Content-Type: application/json
 
 {
-    "price":800
+    "price":900
 }
 ###
 
