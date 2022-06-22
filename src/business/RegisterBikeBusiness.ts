@@ -45,6 +45,10 @@ export class RegisterBikeBusiness {
         throw new Error("Informe o novo valor de price.");
       }
 
+      if (typeof price !== "number") {
+        throw new Error("price deve ser do tipo number");
+      }
+
       const registeredBike = await this.registerBikeDatabase.findById(id);
       if (registeredBike.length === 0) {
         throw new Error("Bike não cadastrada.");
