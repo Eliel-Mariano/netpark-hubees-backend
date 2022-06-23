@@ -10,10 +10,7 @@ Listar os produtos filtrados por cor;
 Listar os produtos filtrados por preço.
 
 ### Variáveis de ambiente (.env)
-DB_HOST
-DB_USER
-DB_NAME
-DB_PASS
+DB_HOST, DB_USER, DB_NAME, DB_PASS
 
 ### Documentação do Postman
 https://documenter.getpostman.com/view/19294761/UzBpKke5
